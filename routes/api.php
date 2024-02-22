@@ -23,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/companies', [CompanyController::class, 'index']);
 
+Route::post('/tasks/create', [TaskController::class, 'create'])->middleware('limit.task');;
 
