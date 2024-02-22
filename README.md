@@ -1,3 +1,27 @@
+<p align="center">
+<h1> Capturas de pantalla de los resultados de las consulta</h1>
+    <br>
+    <br>
+<a href=""><img src="https://zysac.com/GET.PNG" alt=""></a>
+<a href=""><img src="https://zysac.com/GET PARAMETER.PNG" alt=""></a>
+<a href=""><img src="https://zysac.com/POST.PNG" alt=""></a>
+<a href=""><img src="https://zysac.com/POST LIMIT.PNG" alt=""></a>
+<a href=""><img src="https://zysac.com/POST ERROR INPUT.PNG" alt=""></a>
+
+</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
