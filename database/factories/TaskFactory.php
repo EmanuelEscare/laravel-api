@@ -13,38 +13,25 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class TaskFactory extends Factory
 {
     /**
-     * Define the model's default state.
+     * The name of the factory's corresponding model.
      *
-     * @return array<string, mixed>
+     * @var string
      */
     protected $model = Task::class;
 
-    public function definition(): array
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
     {
-        $user = User::inRandomOrder()->first();
-        $company = Company::inRandomOrder()->first();
-
         return [
-            'user_id' => $user->id,
             'name' => $this->faker->word,
             'description' => $this->faker->sentence,
-            'company_id' => $company->id,
+            'user_id' => User::inRandomOrder()->has('tasks', '<=', 3)->first()->id,
+            'company_id' => Company::inRandomOrder()->first()->id,
         ];
     }
 
-    /**
-     * Indica que no se deben crear más de 5 registros por usuario.
-     */
-    public function configure()
-    {
-        return $this->afterCreating(function (Task $task) {
-            $user = $task->user;
-            $tasksCount = $user->tasks()->count();
-
-            // Limitar la creación de instancias a 5 por usuario
-            if ($tasksCount >= 3) {
-                $task->delete();
-            }
-        });
-    }
 }

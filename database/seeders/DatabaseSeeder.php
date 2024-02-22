@@ -12,10 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Call the Seeders to create the test instances
         $this->call([
-            UsersSeeder::class,
             CompaniesSeeder::class,
-            TasksSeeder::class
+            UsersSeeder::class,
         ]);
     }
 }

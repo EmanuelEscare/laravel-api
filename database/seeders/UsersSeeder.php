@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -14,6 +15,6 @@ class UsersSeeder extends Seeder
     public function run(): void
     {
         //
-        User::factory()->count(30)->create();
+        User::factory()->has(Task::factory()->count(3))->count(30)->create();
     }
 }
