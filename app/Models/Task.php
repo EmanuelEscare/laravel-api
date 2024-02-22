@@ -44,4 +44,25 @@ class Task extends Model
         return $this->belongsTo(User::class);
     }
 
+    // Defines the value of the user attribute with its name
+    public function getUserAttribute()
+    {
+        return $this->user_object->name;
+    }
+
+    // Add the attribute with the username
+    protected $appends = ['user'];
+
+    // Rearranges the position of model attributes
+    public function toArray()
+    {
+        $array = parent::toArray();
+        $user = $array['user'];
+        unset($array['user']);
+        $position = 3;
+        $result = array_slice($array, 0, $position, true) +
+            ['user' => $user] +
+            array_slice($array, $position, null, true);
+        return $result;
+    }
 }
